@@ -4,7 +4,7 @@ Download a show's mp3 from the KEXP archive.
 
 Built with Claude Code, simple script to download KEXP shows by date via their public API.
 
-Usage: kexp_dl.py <date> <show_name>
+Usage: kexp_dl.py <show_name> <date>
 Author: @dencold
 """
 
@@ -43,8 +43,8 @@ def download_file(url, dest_path):
 
 def main():
     parser = argparse.ArgumentParser(description="Download a show's mp3 from the KEXP archive.")
-    parser.add_argument("date", help="Date of the show in ISO 8601 format (e.g. 2024-11-08)")
     parser.add_argument("show_name", help="Show name in kebab case (e.g. the-morning-show)")
+    parser.add_argument("date", help="Date of the show in ISO 8601 format (e.g. 2024-11-08)")
     args = parser.parse_args()
 
     try:
